@@ -13,9 +13,10 @@ def load_data():
     Converte colunas relevantes para tipos numéricos e trata possíveis erros.
     """
     try:
-        df = pd.read_csv('../bases_tratadas/dados_tratados.csv', sep=';', encoding='UTF-8', index_col=0)
+        df = pd.read_csv('bases_tratadas/dados_tratados.csv', sep=';', encoding='UTF-8', index_col=0)
+        #df = pd.read_csv('../bases_tratadas/dados_tratados.csv', sep=';', encoding='UTF-8', index_col=0)
     except FileNotFoundError:
-        st.error("Arquivo '../bases_tratadas/dados_tratados.csv' não encontrado. "
+        st.error("Arquivo 'bases_tratadas/dados_tratados.csv' não encontrado. "
                  "Verifique o caminho ou se a Parte 1 do script foi executada e o arquivo foi salvo corretamente.")
         return pd.DataFrame()
     except Exception as e:
